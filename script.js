@@ -1,3 +1,11 @@
+window.addEventListener('load', (event) => {
+
+let fullMap = document.querySelector('#map');
+
+fullMap.addEventListener('click', (event => {
+    console.log(event);
+}))
+
 var geojson = {
     type: 'FeatureCollection',
     features: [{
@@ -8,7 +16,8 @@ var geojson = {
       },
       properties: {
         title: 'Mapbox',
-        description: 'Washington, D.C.'
+        description: 'Washington, D.C.',
+        icon: 'harbor'
       }
     },
     {
@@ -40,4 +49,4 @@ console.log('hey');
       .addTo(map);
   })
 
-
+});
