@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map</title>
+    <link href="style.css" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoidG9ueW1hcGhhd2siLCJhIjoiY2s5MW1xYm1kMDBwejNlbGZtN2w2aW5qdSJ9.-Dqnl0QbRMrt3L7ddpJFbQ';
+    var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+    center: [-114, 52], // starting position [lng, lat]
+    zoom: 9 // starting zoom
+});
+
+// create the popup
+var popup = new mapboxgl.Popup({ offset: 25 })
+.setLngLat([-120, 50])
+.setText(
+'Construction on the Washington Monument began in 1848.'
+)
+.addTo(map);
+</script>
+<script src="./script.js"></script>
+</body>
+</html>
